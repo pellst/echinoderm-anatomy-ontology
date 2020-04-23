@@ -1,0 +1,12 @@
+format-version: 1.2
+data-version: ecao/releases/2020-04-23/ecao-base.owl
+ontology: ecao/ecao-base
+property_value: http://purl.org/dc/elements/1.1/description "None" xsd:string
+property_value: http://purl.org/dc/elements/1.1/title "echinoderm anatomy ontology" xsd:string
+property_value: http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 xsd:string
+property_value: http://purl.org/dc/terms/license https://creativecommons.org/licenses/unspecified
+
+[Term]
+id: ECAO:00000000
+name: root node
+
