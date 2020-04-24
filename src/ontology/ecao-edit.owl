@@ -17,10 +17,12 @@ Import(<http://purl.obolibrary.org/obo/ecao/imports/ro_import.owl>)
 
 Import(<http://purl.obolibrary.org/obo/ecao/imports/uberon_import.owl>)
 
+Import(<http://purl.obolibrary.org/obo/ecao/components/all_templates.owl>)
 
 
-Annotation(dce:title "echinoderm anatomy ontology")
-Annotation(dcterms:license <https://creativecommons.org/licenses/unspecified>)
+
+Annotation(dce:title "Echinoderm Anatomy and Development Ontology")
+Annotation(dcterms:license <https://creativecommons.org/licenses/by/3.0/>)
 Annotation(dce:description "None")
 
 Declaration(Class(<http://purl.obolibrary.org/obo/ECAO_00000000>))
