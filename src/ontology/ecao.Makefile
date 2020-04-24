@@ -17,5 +17,6 @@ components/all_templates.owl: $(TEMPLATES)
 		--output $@.tmp.owl && mv $@.tmp.owl $@
 
 $(TEMPLATESDIR)/%.owl: $(TEMPLATESDIR)/%.tsv $(SRC)
-	$(ROBOT) merge -i $(SRC) template --template $< --output $@ && \
+	$(ROBOT) merge -i $(SRC) -o tmp/merged.owl
+	$(ROBOT) -vvv template -i tmp/merged.owl --prefix "ECAO: http://purl.obolibrary.org/obo/ECAO_" --merge-before --template $< --output $@ && \
 	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
