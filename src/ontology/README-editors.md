@@ -191,3 +191,67 @@ Note: if you have only just created this project you will need to authorize trav
  3. Click the tick symbol next to ecao
 
 Travis builds should now be activated
+
+# Configuring ECAO templates
+
+The COVOC vocabulary pipeline is based on Google sheets for curation and ROBOT for
+template compilation. This is how its done:
+
+1. Publish a particular sheet on Google sheets (File > Publish on web). In the publishing dialog select the sheet you want to publish and as the file type TSV (not: Web page). Copy the url to the sheet.
+2. Go to config.txt and and a row by giving the sheet name, for example `organism` and the url copied in the last step. Use the pipe symbol ('|') to separate the two.
+3. Important: Make sure there is exactly one empty row in the end of the file.
+
+When this is done, the release manager will run 
+
+```
+cd src/ontology
+sh run.sh make prepare_templates
+```
+
+To download the pattern files from Gsheets into the template directory. The usual release pipeline will then build and merge all the templates into a single component (`src/ontology/components/all_templates.owl`). The rest of the release pipeline works as usual. 
+
+```
+cd src/ontology
+sh run.sh make prepare_release -B
+
+# or, to skip mirror download
+sh run.sh make MIR=false prepare_release -B
+
+# or, to skip import re-generations altogether (including mirrors)
+sh run.sh make IMP=false prepare_release -B
+```
+
+Important: If you ROBOT templates contain a new relationship, say `'develops from' some %	C`, this means that in order for the template to compile correctly, you need to first add the respective RO relationship. I usually cheat here and simply:
+
+1) add a declaration to the edit file
+
+```
+Declaration(Class(<http://purl.obolibrary.org/obo/RO_0002202>))
+```
+
+2) Refresh the RO import:
+
+```
+sh run.sh make imports/ro_import.owl
+```
+
+This will import the new relation from RO.
+
+# Notes for curators:
+
+There are only three files that should be edited manually:
+
+- `../templates/subclasses.tsv` is used to align imported ontologies with subclass axioms.
+- `../templates/config.txt` is used to import external TSV files into the repo (see section 'Configuring COVOC templates')
+- `covoc-edit.owl` can be edited to change or add ontology metadata (description, contributors etc) or add imports.
+
+## Adding am import
+
+- change `covoc-odk.yaml` to add import in the usual way.
+- Run:
+```
+cd src/ontology
+sh run.sh make update_repo
+```
+- update `catalog-v001.xml` to add the new import redirect, and `covoc-edit.owl` to include the import.
+

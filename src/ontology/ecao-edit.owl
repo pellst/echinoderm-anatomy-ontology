@@ -26,6 +26,10 @@ Annotation(dcterms:license <https://creativecommons.org/licenses/by/3.0/>)
 Annotation(dce:description "None")
 
 Declaration(Class(<http://purl.obolibrary.org/obo/ECAO_00000000>))
+Declaration(Class(<http://purl.obolibrary.org/obo/RO_0002202>))
+Declaration(Class(<http://purl.obolibrary.org/obo/BFO_0000050>))
+Declaration(Class(<http://purl.obolibrary.org/obo/RO_0002488>))
+Declaration(Class(<http://purl.obolibrary.org/obo/RO_0002492>))
 
 
 ############################
