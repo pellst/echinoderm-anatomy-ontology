@@ -45,9 +45,10 @@ primary_release: full
 public_release: none
 public_release_assets: null
 reasoner: ELK
-release_artefacts:
-- full
-- base
+release_artefacts: 
+  - base
+  - full
+  - simple
 release_date: false
 repo: ecao
 uribase: http://purl.obolibrary.org/obo
