@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://purl.obolibrary.org/obo/ecao/components/all_templates.owl#"
-     xml:base="http://purl.obolibrary.org/obo/ecao/components/all_templates.owl"
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/ecao/components/organism_do_no_edit.owl#"
+     xml:base="http://purl.obolibrary.org/obo/ecao/components/organism_do_no_edit.owl"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -16,8 +16,7 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/ecao/components/all_templates.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/ecao/releases/2020-04-25/components/all_templates.owl"/>
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/ecao/components/organism_do_no_edit.owl">
         <dc:description>None</dc:description>
         <dc:title>Echinoderm Anatomy and Development Ontology</dc:title>
         <terms:license rdf:resource="https://creativecommons.org/licenses/by/3.0/"/>
